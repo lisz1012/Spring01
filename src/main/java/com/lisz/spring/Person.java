@@ -5,12 +5,6 @@ public class Person {
 	private int age;
 	private Food food;
 	
-	public Person(String name, int age, Food food) {
-		super();
-		this.name = name;
-		this.age = age;
-		this.food = food;
-	}
 	public Food getFood() {
 		return food;
 	}
