@@ -1,10 +1,19 @@
 package com.lisz.spring;
 
+import java.util.Properties;
+
 public class Person {
 	private String name;
 	private int age;
 	private Food food;
+	private Properties skill;
 	
+	public Properties getSkill() {
+		return skill;
+	}
+	public void setSkill(Properties skill) {
+		this.skill = skill;
+	}
 	public Food getFood() {
 		return food;
 	}

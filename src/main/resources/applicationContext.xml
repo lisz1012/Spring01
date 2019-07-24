@@ -16,6 +16,13 @@
     	<property name="name"><value>Tom</value></property>
     	<property name="age" value="18" />
     	<property name="food" ref="food"/>
+    	<property name="skill">
+    		<value>
+    			math=100,
+    			physics=120,
+    			coding=200
+    		</value>
+    	</property>
     </bean>
     <alias name="person" alias="person2"/>
 </beans>
