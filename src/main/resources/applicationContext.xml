@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc-5.1.xsd">
+    
+    <!-- <context:annotation-config />
+    <context:component-scan base-package="com.cinderella" /> -->
+    <import resource="applicationContext-*.xml" />
+    <bean id="person" name="human, start" class="com.lisz.spring.Person" lazy-init="false">
+    	<constructor-arg name="name" value="maxiaosan" />
+    	<constructor-arg name="age" value="18" />
+    	<constructor-arg name="food" ref="food" />
+    </bean>
+    <alias name="person" alias="person2"/>
+</beans>
