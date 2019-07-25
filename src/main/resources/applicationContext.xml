@@ -18,7 +18,7 @@
     	<property name="food" ref="food"/>
     	<property name="skill">
     		<value>
-    			math=100
+    			math=100  <!-- 不用写逗号，否则逗号也会被放在value里，整体被当作字符串 -->
     			physics=120
     			coding=200
     		</value>
