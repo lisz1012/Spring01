@@ -12,7 +12,7 @@
     <context:component-scan base-package="com.cinderella" /> -->
     <import resource="applicationContext-*.xml" />
     <!-- 通过对象属性来DI，具体调用了set方法，没有set方法是set不进去的 -->
-    <bean id="person" name="human, start" class="com.lisz.spring.Person" lazy-init="false">
+    <bean id="person" scope="prototype" name="human, start" class="com.lisz.spring.Person" lazy-init="false">
     	<property name="name"><value>Tom</value></property>
     	<property name="age" value="18" />
     	<property name="food" ref="food"/>

@@ -15,7 +15,7 @@ public class TestGetBean {
 		Person p3 = context.getBean("human", Person.class);
 		Person p4 = context.getBean("human", Person.class);
 		Person p5 = context.getBean("person2", Person.class);
-		System.out.println(p2 == p3 && p3 == p4 && p4 == p5); // true
+		System.out.println(p2 == p3 && p3 == p4 && p4 == p5); // 默认singleton，所以true；但是若Person的bean标签里有scope="prototype"则为false
 		/*Food f = context.getBean(Food.class);
 		System.out.println(p);
 		p.setName("Zhangsan");
