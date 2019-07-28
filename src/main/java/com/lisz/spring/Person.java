@@ -15,6 +15,10 @@ public class Person {
 	private Map<String, String> map;
 	private String arr[];
 	
+	public Person() {
+		System.out.println("Person init");
+	}
+	
 	public List<String> getList() {
 		return list;
 	}

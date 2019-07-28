@@ -12,7 +12,7 @@
     <context:component-scan base-package="com.cinderella" /> -->
     <import resource="applicationContext-*.xml" />
     <!-- 通过对象属性来DI，具体调用了set方法，没有set方法是set不进去的 -->
-    <bean id="person" scope="prototype" name="human, start" class="com.lisz.spring.Person" lazy-init="false">
+    <bean id="person" scope="prototype" name="human, start" class="com.lisz.spring.Person" lazy-init="true">
     	<property name="name"><value>Tom</value></property>
     	<property name="age" value="18" />
     	<property name="food" ref="food"/>
@@ -54,4 +54,12 @@
     	</property>
     </bean>
     <alias name="person" alias="person2"/>
+    <bean id="carFactory" class="com.lisz.spring.CarFactory" />
+    <!-- 动态工厂可以通过配置文件从外部改变bean的选择 -->
+    <bean id="car" factory-bean="carFactory" factory-method="getInstance" >
+    	<!-- 下面这种需要有属性定义和set方法 -->
+    	<!-- <property name="name" value="audi" /> -->
+    	<!-- 参数通过constructor标签来传入getInstance的参数，name="name"可以省略 -->
+    	<constructor-arg name="name" value="audi" />
+    </bean>
 </beans>
