@@ -19,12 +19,15 @@ public class Test {
 		System.out.println(c.getA());
 		
 		/*
+A init
 B init
 C init
-A init
-com.lisz.spring.hw.B@24fcf36f
-com.lisz.spring.hw.A@10feca44
-com.lisz.spring.hw.C@3fb1549b
+com.lisz.spring.hw.B@49c7b90e
+com.lisz.spring.hw.C@10d307f1
+com.lisz.spring.hw.A@4d5b6aac
+com.lisz.spring.hw.B@49c7b90e
+com.lisz.spring.hw.C@10d307f1
+com.lisz.spring.hw.A@4d5b6aac
 		 */
 	}
 
