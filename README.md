@@ -1,5 +1,7 @@
 # Spring01
 
+=== 02 ===
+
 Spring给出的对象有两种方式：1. Singleton（默认） 2. Prototype （每次都new）
 
 Singleton说的是在以下作用域中单独一个：websocket，request，session，application等基于运行环境的生命周期
@@ -10,7 +12,7 @@ application，基于应用程序的，一旦服务启动，就只new出来这么
 一般来说网络连接都应该是长连接，但是由于http协议产生的时候网速慢（最快的56k猫），网络资源稀缺，所以被设计成了短连接，连完了拿
 到页面之后就断开。http早期设计就是为了节省资源，现在情况有点变了。
 
-Struts2之后，COntroller（Servlet）和 Service 和 Dao 层都是单例的。POJO，Entity等不是单例的，因为他们不归spring管理
+Struts2之后，Controller（Servlet）和 Service 和 Dao 层都是单例的。POJO，Entity等不是单例的，因为他们不归spring管理
 （view我们不去管他）。整套MVC里面所有的类都归spring管理，单例。而这样会出现什么问题？
 为什么用单例？性能优化。安全问题？并发情况下有问题，很大，webapp的容器，比如Tomcat，在每一个request来的时候新开一个线程，
 这样就造成了对象只有一个但是线程却有多个，每个线程有对象属性的ThreadLocal来隔离不同的线程。如果单例对象里面有成员变量而很多线程
@@ -20,3 +22,13 @@ Struts2之后，COntroller（Servlet）和 Service 和 Dao 层都是单例的。
 
 Spring只是把对象以Singleton的方式创建出来了，Spring MVC包装了Servlet。Spring MVC隔离用户之间的状态数据。一次request开一
 个线程，一个线程处理多个用户的请求是不现实的
+
+循环依赖，引发内存无法释放的问题。循环引用中各个对象都永远不会被GC，因为引用计数器不为0。对于Spring容器来说，他维护着一个“注册表”，
+对于Singleton，先new处对象在set属性，但是对于Prototype，一看有引用，先去把被引用的创建出来，这样就在循环中无限转圈了。Spring
+会检测prototype的循环依赖，不让这么干。Singleton在Spring里跟我们平常写代码是一样的，先都new出来再set值.  如果没用Spring框架，
+很有可能内存泄露，spring目的就是避免循环引用，单例不做这种检查，因为占用的内存少。循环中一旦getBean里面的那一个是单例，所有引用链/
+环上的对象都成了单例，单例的引用也是单例（spring内部机制的结果）
+
+=== 03 ===
+
+Springboot甚至可以用来做微信公众号的开发
