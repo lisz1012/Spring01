@@ -27,7 +27,7 @@ Spring只是把对象以Singleton的方式创建出来了，Spring MVC包装了S
 对于Singleton，先new处对象在set属性，但是对于Prototype，一看有引用，先去把被引用的创建出来，这样就在循环中无限转圈了。Spring
 会检测prototype的循环依赖，不让这么干。Singleton在Spring里跟我们平常写代码是一样的，先都new出来再set值.  如果没用Spring框架，
 很有可能内存泄露，spring目的就是避免循环引用，单例不做这种检查，因为占用的内存少。循环中一旦getBean里面的那一个是单例，所有引用链/
-环上的对象都成了单例，单例的引用也是单例（spring内部机制的结果）
+环上的对象都成了单例，单例的引用也是单例（spring内部机制的结果）. depends-on循环了，也会报错
 
 === 03 ===
 
