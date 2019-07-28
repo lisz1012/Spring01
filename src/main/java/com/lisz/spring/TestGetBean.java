@@ -29,6 +29,9 @@ public class TestGetBean {
 		Car car = context.getBean("car", Car.class);
 		System.out.println(car.getName());
 		System.out.println(car.getPrice());
+		
+		Plane plane = context.getBean("plane", Plane.class);
+		System.out.println(plane.getName());
 	}
 
 }

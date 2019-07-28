@@ -62,4 +62,8 @@
     	<!-- 参数通过constructor标签来传入getInstance的参数，name="name"可以省略 -->
     	<constructor-arg name="name" value="audi" />
     </bean>
+    <!-- 工厂的getInstance方法是静态的，这里的class设置有点怪异，是生产它的工厂类，而不是bean实例，其他同上 -->
+    <bean id="plane" class="com.lisz.spring.PlaneFactory" factory-method="getInstance">
+    	<constructor-arg name="name" value="F22" />
+    </bean>
 </beans>
