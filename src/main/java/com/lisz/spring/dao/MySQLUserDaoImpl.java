@@ -4,7 +4,7 @@ import org.springframework.stereotype.Repository;
 
 import com.lisz.spring.entity.User;
 
-@Repository //注解，按类型装配, 也不需要写set方法
+@Repository("mySQLUserDaoImpl") //注解，按类型装配, 也不需要写set方法
 public class MySQLUserDaoImpl implements UserDao {
 
 	public User getUserByUsername(String username) {

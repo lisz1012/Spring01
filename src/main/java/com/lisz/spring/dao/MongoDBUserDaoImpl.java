@@ -4,7 +4,7 @@ import org.springframework.stereotype.Repository;
 
 import com.lisz.spring.entity.User;
 
-@Repository //注解，按类型装配, 也不需要写set方法
+@Repository("mongoDBUserDaoImpl") //注解，按类型装配, 也不需要写set方法
 public class MongoDBUserDaoImpl implements UserDao {
 
 	public User getUserByUsername(String username) {

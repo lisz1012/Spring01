@@ -1,6 +1,7 @@
 package com.lisz.spring.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.lisz.spring.dao.UserDao;
@@ -15,6 +16,7 @@ import com.lisz.spring.entity.User;
 @Service //注解，按类型装配, 也不需要写set方法
 public class MainService {
 	@Autowired
+	@Qualifier("mySQLUserDaoImpl")
 	private UserDao dao;
 	
 	public User login(String username, String password) {
