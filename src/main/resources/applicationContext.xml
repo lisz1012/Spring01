@@ -8,8 +8,8 @@
     http://www.springframework.org/schema/mvc
     http://www.springframework.org/schema/mvc/spring-mvc-5.1.xsd">
     
-    <!-- <context:annotation-config />
-    <context:component-scan base-package="com.cinderella" /> -->
+    <context:annotation-config />
+    <context:component-scan base-package="com.lisz.spring" />
     <import resource="applicationContext-*.xml" />
     <!-- 通过对象属性来DI，具体调用了set方法，没有set方法是set不进去的 -->
     <bean id="person" scope="prototype" name="human, start" class="com.lisz.spring.Person" lazy-init="true">

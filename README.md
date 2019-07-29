@@ -31,4 +31,6 @@ Spring只是把对象以Singleton的方式创建出来了，Spring MVC包装了S
 
 === 03 ===
 
-Springboot甚至可以用来做微信公众号的开发
+Springboot甚至可以用来做微信公众号的开发。
+<property></property>下的<value></value>相当于"", <null></null>是null值
+@Autowired是按照byType的方式注入属性的，有两个相同的Type的对象都注册了的话Spring启动的时候会报错
