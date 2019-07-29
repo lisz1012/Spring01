@@ -1,5 +1,6 @@
 package com.lisz.spring.service;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,9 @@ public class MainService {
 	public User login(String username, String password) {
 		System.out.println("Username: " + username + "  Password: " + password);
 		System.out.println("Service received request and processing...");
-		return dao.getUserByUsername(username);
+		User user = dao.getUserByUsername(username);
+		System.out.println(ToStringBuilder.reflectionToString(user));
+		return user;
 	}
 	
 }

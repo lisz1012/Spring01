@@ -34,3 +34,6 @@ Spring只是把对象以Singleton的方式创建出来了，Spring MVC包装了S
 Springboot甚至可以用来做微信公众号的开发。
 <property></property>下的<value></value>相当于"", <null></null>是null值
 @Autowired是按照byType的方式注入属性的，有两个相同的Type的对象都注册了的话Spring启动的时候会报错
+这时就应该按照name进行注入，可以写@Component("NAME")和@Autowired下面写@Qualifier("NAME")
+Entity类型的类，也可以写@Compoennt让spring管起来，但是由于要线程安全，所以肯定不能是单例，所以要写在@Component的下面写@Scope("prototype")
+属性的注入可以用@Value("USERNAME")来直接在类里面注入，spring会自动匹配类型
