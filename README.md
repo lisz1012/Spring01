@@ -32,6 +32,9 @@ Spring只是把对象以Singleton的方式创建出来了，Spring MVC包装了S
 === 03 ===
 
 Springboot甚至可以用来做微信公众号的开发。
+
+lazy-init就是在Spring注册表的那个Map中，可以先创建出来但是value还是null，什么时候getBean用到了，什么时候new对象
+
 <property></property>下的<value></value>相当于"", <null></null>是null值
 @Autowired是按照byType的方式注入属性的，有两个相同的Type的对象都注册了的话Spring启动的时候会报错
 这时就应该按照name进行注入，可以写@Component("NAME")和@Autowired下面写@Qualifier("NAME")
