@@ -42,3 +42,8 @@ Entity类型的类，也可以写@Compoennt让spring管起来，但是由于要�
 属性的注入可以用@Value("USERNAME")来直接在类里面注入，spring会自动匹配类型
 
 Spring AOP是通过JDK的Proxy和CGLib实现的，这两个的底层都是靠ASM
+
+
+=== 04 ===
+
+Kubernates可以不会动手搭建或者写脚本，但要知道是干嘛的，就是比Docker更强一些，有些新的思想在里面
