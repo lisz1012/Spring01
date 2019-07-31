@@ -56,8 +56,8 @@ Springboot学完了之后，其他框架就基本上是调用API了
 starter内部就避免了依赖的冲突。一并引入的还有jboss，jackson，log4j，asm，junit，hibernate validator
 
 在STS/eclipse中建立该maven项目：右键，import，maven，Exsiting Project，然后选择项目文件夹，然后会引入依赖构建项目. static文件夹会放静态
-文件比如html，css，js 图片等。templates：spring mvc的时候官方推荐jsp做前端渲染，但后来已经有人开始用模版引擎了，比如 Free Marker等，template
-会放空模版，带标记的空模版，渲染的时候从template中读取。
+文件比如html，css，js 图片等。templates：spring mvc的时候官方推荐jsp做前端渲染，但后来已经有人开始用模版引擎了，比如Thymeleaf Free Marker等，
+template 会放空模版，带标记的空模版，渲染的时候从template中读取。
 
 启动SpringBoot项目，两种方式：1. 运行主入口程序，带main 方法的那个，右键，Run As -> Java Application
 SpringBoot有一套完整的内置的默认配置，比如Tomcat的web.xml和spring的xml的配置。想个性化的配置某些框架，还可以通过applicatoin.properties来配置
