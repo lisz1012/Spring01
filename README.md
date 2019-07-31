@@ -70,4 +70,4 @@ applicatoin.properties来配置这样会覆盖原来的默认配置，比如spri
 
 项目上单击右键，然后Run As -> Maven Install就会在target文件夹下生成项目打包的jar文件, 双击Jar文件或者在命令行下执行
 java -jar ./FirstSpringBoot-0.0.1-SNAPSHOT.jar  即可运行，然后去浏览器，查看http://localhost:8080即可证实。想结束程序的话，就jps，杀进程，
-然后再重新启动即可.
+然后再重新启动即可.jar文件可以拿到任意一台机器，只要装了jdk/jre，不用安装启动tomcat或下载jar包，就可以用启动程序
