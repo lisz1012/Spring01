@@ -60,8 +60,8 @@ starter内部就避免了依赖的冲突。一并引入的还有jboss，jackson�
 template 会放空模版，带标记的空模版，渲染的时候从template中读取。
 
 启动SpringBoot项目，两种方式：1. 运行主入口程序，带main 方法的那个，右键，Run As -> Java Application
-SpringBoot有一套完整的内置的默认配置，比如Tomcat的web.xml和spring的xml的配置。想个性化的配置某些框架，还可以通过applicatoin.properties来配置
-这样会覆盖原来的默认配置，比如spring和spring mvc整合的时候，会去写一些配置管理Controller，再如修改web.xml。
+SpringBoot有一套完整的内置的默认配置（一部分爽点在这里），比如Tomcat的web.xml和spring的xml的配置。想个性化的配置某些框架，还可以通过
+applicatoin.properties来配置这样会覆盖原来的默认配置，比如spring和spring mvc整合的时候，会去写一些配置管理Controller，再如修改web.xml。
 
 内嵌容器化的web项目，比较有颠覆性，重新使得Tomcat焕发了活力。大数据基本思想：1.分而治之 2. 计算向数据移动。已经打包好了web服务器tomcat这个运行环境
 然后扔到服务器（只需要有Javase）上，好处是不需要在二次调整，而且更新项目的时候，和运维分离开了，每个项目有一个tomcat，想想就爽。运行的时候就是一个
