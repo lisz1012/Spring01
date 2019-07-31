@@ -47,3 +47,21 @@ Spring AOP是通过JDK的Proxy和CGLib实现的，这两个的底层都是靠ASM
 === 04 ===
 
 Kubernates可以不会动手搭建或者写脚本，但要知道是干嘛的，就是比Docker更强一些，有些新的思想在里面
+
+在这里配置一个Springboot新项目：https://start.spring.io  Group相当于报的名称，Artifact相当于项目名称.SpringBoot是SpringCloud的基础
+Springboot学完了之后，其他框架就基本上是调用API了
+需要引入Web -> Spring Web Starter 会带来web功能，Spring，spring mvc，tomcat，点击Generate the Project之后会下载一个项目文件夹，
+还有test依赖和SpringBoot和maven集成的插件
+查看其pom.xml文件，所有的依赖都在spring-boot-starter-web里了。多个依赖的pom文件打包成了一个spring-boot-starter-web。Spring提供的各个
+starter内部就避免了依赖的冲突。一并引入的还有jboss，jackson，log4j，asm，junit，hibernate validator
+
+在STS/eclipse中建立该maven项目：右键，import，maven，Exsiting Project，然后选择项目文件夹，然后会引入依赖构建项目. static文件夹会放静态
+文件比如html，css，js 图片等。templates：spring mvc的时候官方推荐jsp做前端渲染，但后来已经有人开始用模版引擎了，比如 Free Marker等，template
+会放空模版，带标记的空模版，渲染的时候从template中读取。
+
+启动SpringBoot项目，两种方式：1. 运行主入口程序，带main 方法的那个，右键，Run As -> Java Application
+SpringBoot有一套完整的内置的默认配置，比如Tomcat的web.xml和spring的xml的配置。想个性化的配置某些框架，还可以通过applicatoin.properties来配置
+这样会覆盖原来的默认配置，比如spring和spring mvc整合的时候，会去写一些配置管理Controller，再如修改web.xml。
+
+内嵌容器化的web项目，比较有颠覆性，重新使得Tomcat焕发了活力。大数据基本思想：1.分而治之 2. 计算向数据移动。已经打包好了web服务器tomcat这个运行环境
+然后扔到服务器（只需要有Javase）上，好处是不需要在二次调整，而且更新项目的时候，和运维分离开了，每个项目有一个tomcat，想想就爽
