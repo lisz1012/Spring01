@@ -70,4 +70,15 @@ applicatoin.properties来配置这样会覆盖原来的默认配置，比如spri
 
 项目上单击右键，然后Run As -> Maven Install就会在target文件夹下生成项目打包的jar文件, 双击Jar文件或者在命令行下执行
 java -jar ./FirstSpringBoot-0.0.1-SNAPSHOT.jar  即可运行，然后去浏览器，查看http://localhost:8080即可证实。想结束程序的话，就jps，杀进程，
-然后再重新启动即可.jar文件可以拿到任意一台机器，只要装了jdk/jre，不用安装启动tomcat或下载jar包，就可以用启动程序
+然后再重新启动即可.jar文件可以拿到任意一台机器，只要装了jdk/jre，不用安装启动tomcat或下载jar包，就可以用启动程序。传统的Tomcat项目要运行Tomcat再把
+war（其实跟Jar一样，是个zip包，区别是war是给web用的，遵循web标准，会被web容器自动解压开，放到对应的目录下）传上去在其中运行. Restful是一种约定好的
+访问接口的方式.
+
+另一种启动方式：项目上面右键，然后Run As然后选择SpringBoot Application。
+
+更改Tomcat的监听端口：在application.properties文件中写：server.port=80 然后重新启动，再访问浏览器的时候就不用指定8080端口了
+更改项目访问的主路径：在application.properties文件中写：server.servlet.context-path=/boot，然后重启就在浏览器可以通过http://localhost/boot/
+访问了
+更改banner：在src/main/resources目录下新建banner.txt文件，在其中写入banner内容即可
+
+SpringBoot下的Controller：在类的脑袋上面写@RestController, 他是一个@ResponseBody，不经前端渲染的数据
