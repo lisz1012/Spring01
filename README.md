@@ -82,3 +82,4 @@ war（其实跟Jar一样，是个zip包，区别是war是给web用的，遵循we
 更改banner：在src/main/resources目录下新建banner.txt文件，在其中写入banner内容即可
 
 SpringBoot下的Controller：在类的脑袋上面写@RestController, 他是一个@ResponseBody，不经前端渲染的数据
+配置热部署：项目上右键，Spring，Add Dev Tools即可。会在pom文件中加一个spring-boot-devtools依赖。注意这不叫热部署，只是自动触发了重启
