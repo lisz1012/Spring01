@@ -83,3 +83,10 @@ war（其实跟Jar一样，是个zip包，区别是war是给web用的，遵循we
 
 SpringBoot下的Controller：在类的脑袋上面写@RestController, 他是一个@ResponseBody，不经前端渲染的数据
 配置热部署：项目上右键，Spring，Add Dev Tools即可。会在pom文件中加一个spring-boot-devtools依赖。注意这不叫热部署，只是自动触发了重启
+
+
+
+=== 05 ===
+
+基于TCP的网络连接都是长连接，短连接要断开连接。http1.0都是短连接吗，要断开，http1.1有一个keep alive的flag，浏览器支持这个选项的话，可以再一次tcp连接下
+完成多次的request和response请求，连接一旦断开，那还要重新建立
