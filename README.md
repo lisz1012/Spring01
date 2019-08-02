@@ -92,3 +92,7 @@ SpringBoot下的Controller：在类的脑袋上面写@RestController, 他是一�
 完成多次的request和response请求，连接一旦断开，那还要重新建立.
 
 看源码方法的小窍门是打断点，跟进去，看怎么走的。看源码找不到方向是很正常的。
+
+先启动Listener然后Filter最后Servlet
+
+@RequestMapping注解：方法上的会继承类名上的，要把注解里的内容层层累加才能访问到方法
