@@ -89,4 +89,6 @@ SpringBoot下的Controller：在类的脑袋上面写@RestController, 他是一�
 === 05 ===
 
 基于TCP的网络连接都是长连接，短连接要断开连接。http1.0都是短连接吗，要断开，http1.1有一个keep alive的flag，浏览器支持这个选项的话，可以再一次tcp连接下
-完成多次的request和response请求，连接一旦断开，那还要重新建立
+完成多次的request和response请求，连接一旦断开，那还要重新建立.
+
+看源码方法的小窍门是打断点，跟进去，看怎么走的。看源码找不到方向是很正常的。
