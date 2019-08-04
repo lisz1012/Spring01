@@ -106,4 +106,8 @@ Thymeleaf里就是EL表达式，因为有的报错中显示：Caused by: org.thy
 
 spring boot中springmvc配置thymeleaf入门这一集的后半段介绍了不用模版，而是用jsp的配置方法和EL表达式的写法
 
-thymeleaf比jsp高效得多，因为不用生成class文件
+thymeleaf比jsp高效得多，因为不用生成class文件. Thymeleaf用的不太多，因为大都前后端已经分离
+	1.后端只返回给前端JSON数据，前端渲染，这是真正的前后端分离
+	2.服务器端渲染 -> jsp, Thymeleaf <- 服务器渲染好了之后一气儿返回给浏览器，就是jsp和Thymeleaf，只是技术更牛了一点
+	
+MySQL创建数据库：CREATE DATABASE IF NOT EXISTS <DB_NAME> DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
