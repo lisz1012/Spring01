@@ -100,4 +100,10 @@ SpringBoot下的Controller：在类的脑袋上面写@RestController, 他是一�
 CRUD项目，一般勾选：spring-boot-starter， spring data jpa（做ORM，后期会改用myBatis），Thymeleaf，MySql Driver
 项目开始好玩儿了，页面将来还学bootstrap.
 
-多数据源写两个配置文件分别配置，具体以后再说
+多数据源写两个配置文件分别配置，具体以后再说。 Spring-data-XXX (JPA,Redis...想想就很爽).
+Thymeleaf里就是EL表达式，因为有的报错中显示：Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: 
+"city.name" 
+
+spring boot中springmvc配置thymeleaf入门这一集的后半段介绍了不用模版，而是用jsp的配置方法和EL表达式的写法
+
+thymeleaf比jsp高效得多，因为不用生成class文件
